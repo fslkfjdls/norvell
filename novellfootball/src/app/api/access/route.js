@@ -170,8 +170,8 @@ async function generateSessionToken() {
 }
 
 async function generateInvitationCode() {
-  const min = 10000; // Minimum 5-digit number
-  const max = 99999; // Maximum 5-digit number
+  const min = 99999; // Maximum 5-digit number
+  const max = 999999; // Maximum 6-digit number
   const randomBuffer = crypto.randomBytes(4); // Generate 4 random bytes
   const randomNumber = Math.floor(
     min + (randomBuffer.readUInt32BE() % (max - min + 1))
